@@ -1,5 +1,5 @@
 {
-  "name": "nodeJsCLI",
+  "name": "node-js-cli",
   "type": "module",
   "version": "1.0.0",
   "description": "_Task_: to develop a <abbr title = \"CLI\">command line application</abbr> that will listen to user commands and perform certain actions, depending on the line entered. After receiving the command the program must generate an internal event that will be executed by the handler of this event.",
