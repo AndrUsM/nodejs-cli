@@ -9,9 +9,9 @@ export function requestResponder(line) {
 
     const method = splitedLine[1];
     const url = splitedLine[2];
-    
+
     let payload = '';
-    let port = { port: 443 };
+    let port = 443;
 
     const isPayloadRequired = methodsWithBody.find(item => item === method);
 
