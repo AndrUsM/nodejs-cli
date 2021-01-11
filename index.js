@@ -1,3 +1,3 @@
-const runServer = require('./src/server/server');
+const cli = require('./src/cli/index');
 
-runServer();
+cli.initialize();
