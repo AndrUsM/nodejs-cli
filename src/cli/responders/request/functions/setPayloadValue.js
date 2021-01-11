@@ -1,8 +1,10 @@
-const parseParameters = require('./parseParameters');
+import { parseParameters } from './parseParameters.js';
 
-function setPayloadValue(parameters) {
+export function setPayloadValue(parameters) {
     const { splitedLine } = parameters;
+    
     let payload = '';
+
     payload = parseParameters({
         parameter: splitedLine[3],
         title: 'data'
@@ -18,5 +20,3 @@ function setPayloadValue(parameters) {
         payload: payload
     }
 }
-
-module.exports = setPayloadValue;

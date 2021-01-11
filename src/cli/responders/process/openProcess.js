@@ -1,12 +1,12 @@
-const { spawn } = require('child_process');
-const createSubprocessFromFile = require('./createSubprocessFromFile');
+import { spawn } from 'child_process';
+import { createSubprocessFromFile } from './createSubprocessFromFile.js';
 
-function openProcess(spawnCommand) {
-    let { command,parameters } = spawnCommand;
+export function openProcess(spawnCommand) {
+    let { command, parameters } = spawnCommand;
     parameters = parameters ? parameters.split(' ') : [];
 
     // if command is a file
-    if(parameters.includes('--file')){
+    if (parameters.includes('--file')) {
         const fileExtensionConfig = createSubprocessFromFile(command);
         command = fileExtensionConfig.command;
         parameters = fileExtensionConfig.parameters
@@ -33,5 +33,3 @@ function openProcess(spawnCommand) {
         console.log(code);
     });
 }
-
-module.exports = openProcess;

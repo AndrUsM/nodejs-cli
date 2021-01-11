@@ -1,6 +1,6 @@
-const path = require('path');
+import path from 'path';
 
-function createSubprocessFromFile(file) {
+export function createSubprocessFromFile(file) {
     const fileExtension = path.extname(file);
 
     switch (fileExtension) {
@@ -15,5 +15,3 @@ function createSubprocessFromFile(file) {
         }
     }
 }
-
-module.exports = createSubprocessFromFile;

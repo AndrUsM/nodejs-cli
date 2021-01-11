@@ -5,7 +5,7 @@
  *  value: any
  * }
  */
-function handleRequestError(parameters) {
+export function handleRequestError(parameters) {
     const {
         requiredDataList
     } = parameters;
@@ -33,5 +33,3 @@ function handleRequestError(parameters) {
 
     console.log(message);
 }
-
-module.exports = handleRequestError;

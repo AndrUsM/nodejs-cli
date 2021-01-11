@@ -1,7 +1,7 @@
-const openProcess = require('./openProcess');
-const closeProcess = require('./closeProcess');
+import { openProcess } from './openProcess.js';
+import { closeProcess } from './closeProcess.js';
 
-function ProcessResponder(processResponderOptions) {
+export function ProcessResponder(processResponderOptions) {
     const line = processResponderOptions;
     const splitedLine = line.split(' ');
 
@@ -18,11 +18,10 @@ function ProcessResponder(processResponderOptions) {
             closeProcess(pid);
             break;
         }
-        default:
         case 'open':
+        default: {
             openProcess(spawnCommand);
             break;
+        }
     }
 }
-
-module.exports = ProcessResponder;

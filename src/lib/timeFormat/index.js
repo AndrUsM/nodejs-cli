@@ -1,4 +1,4 @@
-function formatTime(timeInSeconds) {
+export function formatTime(timeInSeconds) {
     timeInSeconds = typeof timeInSeconds === 'number' ? timeInSeconds : +timeInSeconds;
 
     var hours = Math.floor(timeInSeconds / 3600);
@@ -29,5 +29,3 @@ function formatTime(timeInSeconds) {
 function checkValueLength(value) {
     return value < 10 ? `0${value}` : value;
 }
-
-module.exports = formatTime;

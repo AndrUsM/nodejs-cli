@@ -1,15 +1,15 @@
-const handleRequestError = require('./cases/handleError');
-const handleRequest = require('./cases/handleRequest');
-const { methodsWithBody } = require('./constants/methodsList');
-const setPayloadValue = require('./functions/setPayloadValue');
-const setPortValue = require('./functions/setPortValue');
+import { handleRequestError } from './cases/handleError.js';
+import { methodsWithBody } from './constants/methodsList.js';
+import { setPayloadValue } from './functions/setPayloadValue.js';
+import { setPortValue } from './functions/setPortValue.js';
+import { handleRequest } from './cases/handleRequest.js';
 
-function requestResponder(line) {
-
+export function requestResponder(line) {
     const splitedLine = line.split(' ');
 
     const method = splitedLine[1];
     const url = splitedLine[2];
+    
     let payload = '';
     let port = { port: 443 };
 
@@ -62,5 +62,3 @@ function requestResponder(line) {
         })
     }
 }
-
-module.exports = requestResponder;

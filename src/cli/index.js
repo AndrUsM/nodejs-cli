@@ -1,13 +1,14 @@
-const Readline = require('readline');
-const commands = require('./commandList');
-const emmiter = require('./emmiters');
+// const Readline = require('readline');
+import Readline from 'readline';
+import { commands } from './commandList.js';
+import { emmiter } from './emmiters.js';
 
 const readline = Readline.createInterface({
     input: process.stdin,
     out: process.stdout
 })
 
-const cli = {};
+export const cli = {};
 
 cli.promptMessage = () => {
     readline.prompt();
@@ -22,12 +23,10 @@ cli.initialize = () => {
 
         if (matcherCommand) emmiter.emit(matcherCommand, line);
         else console.info(`Command ${line} not found`);
-        
+
         cli.promptMessage()
     });
     readline.on('close', () => {
         process.exit(1);
     });
 }
-
-module.exports = cli;

@@ -1,4 +1,4 @@
-const commands = {
+export const commands = {
     system: 'system',
     request: 'request',
     process: 'process',
@@ -6,5 +6,3 @@ const commands = {
     exit: 'exit',
     help: 'help'
 };
-
-module.exports = commands;

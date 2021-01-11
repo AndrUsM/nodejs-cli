@@ -1,10 +1,11 @@
-const methodsWithoutBody = [
+export const methodsWithoutBody = [
     'GET',
     'HEAD',
     'CONNECT',
     'TRACE',
 ];
-const methodsWithBody = [
+
+export const methodsWithBody = [
     'POST',
     'DELETE',
     'PATCH',
@@ -12,13 +13,7 @@ const methodsWithBody = [
     'OPTIONS'
 ]
 
-const methodsList = [
+export const methodsList = [
     methodsWithBody,
     methodsWithoutBody
 ];
-
-module.exports = {
-    methodsWithBody: methodsWithBody,
-    methodsWithoutBody: methodsWithoutBody,
-    methodsList: methodsList
-};

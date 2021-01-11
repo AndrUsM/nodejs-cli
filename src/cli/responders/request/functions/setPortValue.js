@@ -1,7 +1,8 @@
-const parseParameters = require('./parseParameters');
+import { parseParameters } from './parseParameters.js';
 
-function setPortValue(parameters) {
+export function setPortValue(parameters) {
     let { port, splitedLine } = parameters;
+
     port = splitedLine[3];
 
     if (port) {
@@ -10,9 +11,8 @@ function setPortValue(parameters) {
             title: 'port'
         }).value;
     }
+
     return {
         port: port
     }
 }
-
-module.exports = setPortValue;

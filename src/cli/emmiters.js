@@ -1,36 +1,34 @@
-const EventEmmiter = require('events');
-const commands = require('./commandList');
+import EventEmmiter from 'events';
+import { commands } from './commandList.js';
 
-const requestResponder = require('./responders/request/request');
-const clearResponder = require('./responders/clear');
-const systemResponder = require('./responders/system/system');
-const ProcessResponder = require('./responders/process/index');
-const ManualResponder = require('./responders/help');
+import { requestResponder } from './responders/request/request.js';
+import { clearResponder } from './responders/clear.js';
+import { systemResponder } from './responders/system/system.js';
+import { ProcessResponder } from './responders/process/index.js';
+import { manualResponder } from './responders/help.js';
 
-const emmiter = new EventEmmiter();
+export const emmiter = new EventEmmiter();
 
-emmiter.on(commands.exit, _ => {
+emmiter.on(commands.exit, () => {
     process.exit(1);
-})
+});
 
 emmiter.on(commands.request, line => {
     requestResponder(line);
-})
+});
 
-emmiter.on(commands.clear, _ => {
+emmiter.on(commands.clear, () => {
     clearResponder();
-})
+});
 
 emmiter.on(commands.process, line => {
-    ProcessResponder(line)
-})
+    ProcessResponder(line);
+});
 
-emmiter.on(commands.system, _ => {
+emmiter.on(commands.system, () => {
     systemResponder();
 });
 
-emmiter.on(commands.help, _ => {
-    ManualResponder()
-})
-
-module.exports = emmiter;
+emmiter.on(commands.help, () => {
+    manualResponder();
+});

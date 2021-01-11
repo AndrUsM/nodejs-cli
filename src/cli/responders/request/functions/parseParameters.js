@@ -1,4 +1,4 @@
-function parseParameters(parameters) {
+export function parseParameters(parameters) {
     const {
         parameter,
         title
@@ -10,6 +10,7 @@ function parseParameters(parameters) {
     const _value = splitedParameter[1];
 
     const checkPortExistence = parameter && _title === title;
+    
     if (checkPortExistence) {
         port = +_value;
     }
@@ -19,5 +20,3 @@ function parseParameters(parameters) {
         value: _value
     }
 }
-
-module.exports = parseParameters;

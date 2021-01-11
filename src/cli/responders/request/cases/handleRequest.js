@@ -1,7 +1,7 @@
-const urlUtils = require('url');
-const RequestAction = require('../functions/RequestAction');
+import urlUtils from 'url';
+import { RequestAction } from '../functions/RequestAction.js';
 
-function handleRequest(parameters) {
+export function handleRequest(parameters) {
     const {
         url
     } = parameters;
@@ -13,6 +13,7 @@ function handleRequest(parameters) {
     } = parameters;
 
     const parsedUrl = urlUtils.parse(url);
+
     const requestConfigurationOptions = {
         hostname: parsedUrl.hostname,
         port: port,
@@ -20,19 +21,20 @@ function handleRequest(parameters) {
         method: method,
         payload: payload
     };
+
     const requestConfiguration = new RequestAction(requestConfigurationOptions);
 
     const requestResoult = requestConfiguration.execute();
 
-    if (requestResoult) console.log(requestResoult);
+    if (requestResoult) {
+        console.log(requestResoult);
+    }
     else {
         const message = [
             'No response with options:',
             JSON.stringify(requestConfigurationOptions)
         ].join(" ");
-        
+
         console.log(message);
     };
 }
-
-module.exports = handleRequest;

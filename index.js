@@ -1,3 +1,3 @@
-const cli = require('./src/cli/index');
+import { cli } from './src/cli/index.js';
 
 cli.initialize();

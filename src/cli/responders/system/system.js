@@ -1,8 +1,9 @@
-const os = require('os');
-const parseObjects = require('./parseObjects')
-const formatTime = require('../../../lib/timeFormat/index');
+import os from 'os';
+import { parseObjects } from './parseObjects.js';
+import { formatTime } from '../../../lib/timeFormat/index.js';
 
-function systemResponder() {
+
+export function systemResponder() {
     const cpus = os.cpus();
     const cpuInfo = cpus[0];
 
@@ -36,5 +37,3 @@ function systemResponder() {
 
     console.log(systemInfo);
 }
-
-module.exports = systemResponder;

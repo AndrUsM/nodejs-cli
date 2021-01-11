@@ -1,4 +1,4 @@
-function manualResponder() {
+export function manualResponder() {
     const data = [
         {
             command: 'request',
@@ -23,7 +23,7 @@ function manualResponder() {
             description: 'Get information about os: hardware and os',
             example: 'system'
         }
-    ]
+    ];
 
     return data.forEach(item => {
         console.log(
@@ -35,5 +35,3 @@ function manualResponder() {
         )
     });
 }
-
-module.exports = manualResponder;

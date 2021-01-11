@@ -1,7 +1,7 @@
-const https = require('https');
-const { methodsList } = require('../constants/methodsList');
+import https from 'https';
+import { methodsList } from '../constants/methodsList.js';
 
-class RequestAction {
+export class RequestAction {
     constructor(optionsObject) {
         const {
             path,
@@ -68,6 +68,7 @@ class RequestAction {
         request.on('error', error => {
             this.errorInfo = error;
         })
+        
         if (Object.values(this.errorInfo).length) {
             console.log(this.errorInfo);
         }
@@ -84,5 +85,3 @@ class RequestAction {
         return this.responseInfo;
     }
 }
-
-module.exports = RequestAction;
