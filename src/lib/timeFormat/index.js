@@ -1,6 +1,6 @@
 function formatTime(timeInSeconds) {
     timeInSeconds = typeof timeInSeconds === 'number' ? timeInSeconds : +timeInSeconds;
-    
+
     var hours = Math.floor(timeInSeconds / 3600);
     const hoursInSeconds = hours * 3600;
 
@@ -18,7 +18,11 @@ function formatTime(timeInSeconds) {
             seconds
         ].join(':');
     } else {
-        throw new Error('Wrong <formatTime> function argument.\n timeInSeconds must has number type!');
+        const message = [
+            'Wrong <formatTime> function argument.',
+            'timeInSeconds must has number type!'
+        ].join('\n');
+        throw new Error(message);
     }
 }
 
