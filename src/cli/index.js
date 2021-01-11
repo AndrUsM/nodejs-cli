@@ -19,10 +19,14 @@ cli.initialize = () => {
     cli.promptMessage()
     readline.on('line', line => {
         const enteredCommand = line ? line.split(' ')[0] : '';
-        let matcherCommand = Object.keys(commands).find(command => enteredCommand.startsWith(command));
+        const matcherCommand = Object.keys(commands).find(command => enteredCommand.startsWith(command));
 
-        if (matcherCommand) emmiter.emit(matcherCommand, line);
-        else console.info(`Command ${line} not found`);
+        if (matcherCommand) {
+            emmiter.emit(matcherCommand, line);
+        }
+        else {
+            console.info(`Command ${line} not found`);
+        }
 
         cli.promptMessage()
     });
