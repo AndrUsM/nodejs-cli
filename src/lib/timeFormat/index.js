@@ -1,5 +1,7 @@
 export function formatTime(timeInSeconds) {
-    timeInSeconds = typeof timeInSeconds === 'number' ? timeInSeconds : +timeInSeconds;
+    timeInSeconds = typeof timeInSeconds === 'number' ?
+        timeInSeconds :
+        parseInt(timeInSeconds);
 
     var hours = Math.floor(timeInSeconds / 3600);
     const hoursInSeconds = hours * 3600;

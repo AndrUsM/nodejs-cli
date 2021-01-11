@@ -4,7 +4,7 @@ export function closeProcess(application) {
     const getApplicationPidProcess = spawn('pgrep', [application]);
 
     getApplicationPidProcess.stdout.on('data', data => {
-        const pid = +data.toString();
+        const pid = parseInt(data.toString());
         if (pid) {
             process.kill(pid, 9);
         }
