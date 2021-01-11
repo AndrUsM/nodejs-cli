@@ -5,7 +5,8 @@
   "description": "_Task_: to develop a <abbr title = \"CLI\">command line application</abbr> that will listen to user commands and perform certain actions, depending on the line entered. After receiving the command the program must generate an internal event that will be executed by the handler of this event.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index"
   },
   "repository": {
     "type": "git",

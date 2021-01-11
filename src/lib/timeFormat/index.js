@@ -3,11 +3,11 @@ export function formatTime(timeInSeconds) {
         timeInSeconds :
         parseInt(timeInSeconds);
 
-    var hours = Math.floor(timeInSeconds / 3600);
+    let hours = Math.floor(timeInSeconds / 3600);
     const hoursInSeconds = hours * 3600;
 
-    var minutes = Math.floor((timeInSeconds - hoursInSeconds) / 60);
-    var seconds = timeInSeconds - hoursInSeconds - (minutes * 60);
+    let minutes = Math.floor((timeInSeconds - hoursInSeconds) / 60);
+    let seconds = timeInSeconds - hoursInSeconds - (minutes * 60);
 
     hours = checkValueLength(hours);
     minutes = checkValueLength(minutes);
@@ -24,6 +24,7 @@ export function formatTime(timeInSeconds) {
             'Wrong <formatTime> function argument.',
             'timeInSeconds must has number type!'
         ].join('\n');
+
         throw new Error(message);
     }
 }

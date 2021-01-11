@@ -8,9 +8,9 @@ export function parseObjects(objects) {
             Array.from(value).forEach(item => {
                 Object.entries(item).forEach(([itemKey, itemValue]) => {
                     _arraysObject[itemKey] = itemValue;
-                })
+                });
                 _object[key] = _arraysObject;
-            })
+            });
         } else {
             _object[key] = value;
         }

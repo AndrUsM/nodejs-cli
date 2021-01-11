@@ -16,7 +16,7 @@ export function handleRequestError(parameters) {
         const { name, type, value } = field;
         if (typeof value !== type || !value)
             emptyParametersList.push(`${name}:${type}`);
-    })
+    });
     
     const checkNumberOfItemsCondition = emptyParametersList.length > 1;
     

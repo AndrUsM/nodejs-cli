@@ -33,7 +33,7 @@ export function handleRequest(parameters) {
         const message = [
             'No response with options:',
             JSON.stringify(requestConfigurationOptions)
-        ].join(" ");
+        ].join(' ');
 
         console.log(message);
     };

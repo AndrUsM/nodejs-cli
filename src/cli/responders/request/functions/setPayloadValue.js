@@ -16,5 +16,5 @@ export function setPayloadValue(parameters) {
     return {
         port: port,
         payload: payload
-    }
+    };
 }

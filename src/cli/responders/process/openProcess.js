@@ -17,7 +17,7 @@ export function openProcess(spawnCommand) {
         const outData = [
             '\n',
             data.toString()
-        ].join("");
+        ].join('');
         console.log(outData);
     });
 

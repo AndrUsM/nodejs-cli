@@ -40,7 +40,7 @@ export class RequestAction {
             statusCode: response.statusCode,
             headers: response.headers,
             payload: data
-        }
+        };
 
         response.on('end', _ => {
             if (this.responseInfo)
@@ -67,8 +67,8 @@ export class RequestAction {
     handleError(request) {
         request.on('error', error => {
             this.errorInfo = error;
-        })
-        
+        });
+
         if (Object.values(this.errorInfo).length) {
             console.log(this.errorInfo);
         }
